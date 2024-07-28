@@ -5,10 +5,10 @@ import org.jooq.DSLContext
 import org.jooq.impl.DSL
 import kotlin.coroutines.coroutineContext
 
-class WithDsl(private val nonTransactionalDsl: DSLContext) {
-    suspend operator fun <T> invoke(block: suspend DSLContext.() -> T): T {
-        return withVirtualThreadDispatcher { nonTransactionalDsl.block() }
-    }
+class WithDsl(
+    private val nonTransactionalDsl: DSLContext,
+) {
+    suspend operator fun <T> invoke(block: suspend DSLContext.() -> T): T = withVirtualThreadDispatcher { nonTransactionalDsl.block() }
 
     suspend fun <T> transactional(block: suspend DSLContext.() -> T): T {
         return withVirtualThreadDispatcher {

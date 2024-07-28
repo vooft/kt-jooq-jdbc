@@ -9,8 +9,6 @@ import org.jooq.impl.DSL
 import org.junit.jupiter.api.Test
 
 class WithDslTest : IntegrationTest() {
-
-
     @Test
     fun `should execute block`() {
         HikariDataSource(
@@ -18,13 +16,14 @@ class WithDslTest : IntegrationTest() {
                 jdbcUrl = psql.jdbcUrl
                 username = psql.username
                 password = psql.password
-            }
+            },
         ).use { dataSource ->
             val withDsl = WithDsl(DSL.using(dataSource, SQLDialect.POSTGRES))
             runBlocking {
-                val one = withDsl {
-                    selectOne().execute()
-                }
+                val one =
+                    withDsl {
+                        selectOne().execute()
+                    }
 
                 one shouldBe 1
             }

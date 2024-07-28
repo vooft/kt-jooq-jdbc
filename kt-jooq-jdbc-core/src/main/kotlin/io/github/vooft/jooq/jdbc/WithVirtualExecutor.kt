@@ -7,6 +7,7 @@ import kotlin.coroutines.coroutineContext
 
 private val VIRTUAL_THREAD_DISPATCHER = Executors.newVirtualThreadPerTaskExecutor().asCoroutineDispatcher()
 
-internal suspend fun <T> withVirtualThreadDispatcher(block: suspend () -> T) = withContext(coroutineContext + VIRTUAL_THREAD_DISPATCHER) {
-    block()
-}
+internal suspend fun <T> withVirtualThreadDispatcher(block: suspend () -> T) =
+    withContext(coroutineContext + VIRTUAL_THREAD_DISPATCHER) {
+        block()
+    }
