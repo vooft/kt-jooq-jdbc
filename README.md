@@ -9,36 +9,36 @@ Kotlin Coroutines wrapper around jOOQ JDBC using virtual threads.
 ### Usage
 #### Gradle
 ```kotlin
-    repositories {
-        mavenCentral()
-    }
+repositories {
+    mavenCentral()
+}
 
-    dependencies {
-        implementation("io.github.vooft:kt-jooq-jdbc-core:<version>")
-    }
+dependencies {
+    implementation("io.github.vooft:kt-jooq-jdbc-core:<version>")
+}
 ```
 
 #### Non-transactional queries
 ```kotlin
-    val dataSource = createMyDataSource()
+val dataSource = createMyDataSource()
 
-    val withDsl = WithDsl(dataSource)
-    return withDsl {
-        selectFrom(MY_TABLE)
-            .where(MY_TABLE.ID.eq(1))
-            .fetchOne()
-    }
+val withDsl = WithDsl(dataSource)
+return withDsl {
+    selectFrom(MY_TABLE)
+        .where(MY_TABLE.ID.eq(1))
+        .fetchOne()
+}
 ```
 
 #### Transactional queries
 ```kotlin
-    val dataSource = createMyDataSource()
+val dataSource = createMyDataSource()
 
-    val withTransactionalDsl = WithTransactionalDsl(dataSource)
-    return withTransactionalDsl {
-        insertInto(USERS).set(USERS.USERNAME, "test").execute()
-        insertInto(ROLES).set(ROLES.USERNAME, "test").set(ROLES.ROLE, "admin").execute()
-    }
+val withTransactionalDsl = WithTransactionalDsl(dataSource)
+return withTransactionalDsl {
+    insertInto(USERS).set(USERS.USERNAME, "test").execute()
+    insertInto(ROLES).set(ROLES.USERNAME, "test").set(ROLES.ROLE, "admin").execute()
+}
 ```
 
 #### Singleton bean
