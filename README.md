@@ -1,3 +1,8 @@
+![Build and test](https://github.com/vooft/kt-jooq-jdbc/actions/workflows/build.yml/badge.svg?branch=main)
+![Releases](https://img.shields.io/github/v/release/vooft/kt-jooq-jdbc)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.vooft/kt-jooq-jdbc-core)
+![License](https://img.shields.io/github/license/vooft/kt-jooq-jdbc)
+
 ### kt-jooq-jdbc
 Kotlin Coroutines wrapper around jOOQ JDBC using virtual threads.
 
