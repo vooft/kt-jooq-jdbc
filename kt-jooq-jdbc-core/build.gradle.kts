@@ -8,4 +8,6 @@ dependencies {
     testImplementation(libs.jooq)
     testImplementation(libs.bundles.kotest)
     testImplementation(libs.bundles.junit)
+    testImplementation(libs.blockhound)
+    testImplementation(libs.kotlinx.coroutines.debug)
 }

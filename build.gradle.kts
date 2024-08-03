@@ -69,6 +69,9 @@ subprojects {
             events = mutableSetOf(TestLogEvent.FAILED, TestLogEvent.PASSED, TestLogEvent.SKIPPED)
             showStandardStreams = true
         }
+
+        // required for BlockHound https://github.com/reactor/BlockHound/issues/33
+        jvmArgs("-XX:+AllowRedefinitionToAddDeleteMethods")
     }
 
     tasks.withType<LintTask> {

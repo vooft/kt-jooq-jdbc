@@ -9,6 +9,7 @@ pg-jdbc = { module = "org.postgresql:postgresql", version = "42.7.3" }
 jooq = { module = "org.jooq:jooq", version = "3.19.10" }
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-debug = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-debug", version.ref = "coroutines" }
 
 testcontainers-postgres = { module = "org.testcontainers:postgresql", version = "1.20.0" }
 hikaricp = { module = "com.zaxxer:HikariCP", version = "5.1.0" }
@@ -18,6 +19,7 @@ kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kote
 kotest-datatest = { module = "io.kotest:kotest-framework-datatest", version.ref = "kotest" }
 
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version = "5.10.3" }
+blockhound = { module = "io.projectreactor.tools:blockhound", version = "1.0.9.RELEASE" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
