@@ -71,7 +71,7 @@ subprojects {
         }
 
         // required for BlockHound https://github.com/reactor/BlockHound/issues/33
-        jvmArgs("-XX:+AllowRedefinitionToAddDeleteMethods")
+        jvmArgs("-XX:+AllowRedefinitionToAddDeleteMethods", "-XX:+EnableDynamicAgentLoading")
     }
 
     tasks.withType<LintTask> {

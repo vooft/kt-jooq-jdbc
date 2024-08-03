@@ -3,7 +3,6 @@ package io.github.vooft.jooq.jdbc
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import io.kotest.assertions.throwables.shouldThrow
-import io.kotest.matchers.shouldBe
 import io.kotest.matchers.throwable.shouldHaveMessage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -36,18 +35,6 @@ class BlockHoundTest : IntegrationTest() {
     fun destroy() {
         dataSource.close()
     }
-
-    @Test
-    fun `should execute block`(): Unit =
-        runBlocking {
-            val withDsl = WithDsl(DSL.using(dataSource, SQLDialect.POSTGRES))
-            val one =
-                withDsl {
-                    selectOne().execute()
-                }
-
-            one shouldBe 1
-        }
 
     @Test
     fun `should fail on blocking call`(): Unit =

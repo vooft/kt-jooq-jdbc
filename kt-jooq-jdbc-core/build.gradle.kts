@@ -10,4 +10,5 @@ dependencies {
     testImplementation(libs.bundles.junit)
     testImplementation(libs.blockhound)
     testImplementation(libs.kotlinx.coroutines.debug)
+    testImplementation(libs.slf4j.simple)
 }
