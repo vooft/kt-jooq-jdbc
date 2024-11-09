@@ -21,7 +21,7 @@ kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kote
 kotest-datatest = { module = "io.kotest:kotest-framework-datatest", version.ref = "kotest" }
 
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version = "5.11.3" }
-blockhound = { module = "io.projectreactor.tools:blockhound", version = "1.0.9.RELEASE" }
+blockhound = { module = "io.projectreactor.tools:blockhound", version = "1.0.10.RELEASE" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
