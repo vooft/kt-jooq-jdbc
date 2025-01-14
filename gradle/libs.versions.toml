@@ -5,7 +5,7 @@ kotest = "5.9.1"
 
 [libraries]
 
-pg-jdbc = { module = "org.postgresql:postgresql", version = "42.7.4" }
+pg-jdbc = { module = "org.postgresql:postgresql", version = "42.7.5" }
 jooq = { module = "org.jooq:jooq", version = "3.19.16" }
 
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
